@@ -22,19 +22,6 @@ box14();
 box15();
 box16();
 box17();
-box18();
-box19();
-box20();
-box21();
-box22();
-box23();
-box24();
-box25();
-box26();
-box27();
-box28();
-box29();
-box30();
 
 
 function background() {
