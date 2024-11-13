@@ -4,7 +4,8 @@ import * as Utils from "../../script/utils.js";
 import {
     fillCircle,
     randomNumber,
-    randomColor
+    randomColor,
+    fillEllipse
 } from "../../script/utils.js";
 
 const backgroundImage = new Image();
@@ -35,8 +36,34 @@ backgroundImage.onload = () => {
 
 
 
+    function draw() { // functie die de vromen laat tekenen
+        designContext.clearRect(0, 0, designCanvas.width, designCanvas.height);
+
+        // willekeurige lijnen
+        for (let i = 0; i < 10; i++) {
+            designContext.strokeStyle = randomColor();
+            designContext.lineWidth = randomNumber(1, 3);
+            designContext.beginPath();
+            designContext.moveTo(randomNumber(0, designCanvas.width), randomNumber(0, designCanvas.height));
+            designContext.lineTo(randomNumber(0, designCanvas.width), randomNumber(0, designCanvas.height));
+            designContext.stroke();
+        }
+
+        // willekeurige rechthoeken
+        for (let i = 0; i < 6; i++) {
+            let width = randomNumber(20, 80);
+            let height = randomNumber(20, 80);
+            let x = randomNumber(0, designCanvas.width - width);
+            let y = randomNumber(0, designCanvas.height - height);
+            designContext.fillStyle = randomColor();
+            designContext.fillRect(x, y, width, height);
+        }
+    
+    
+    }
 
 
 
-
-}
+    draw();
+    designCanvas.addEventListener("click", draw);
+};
