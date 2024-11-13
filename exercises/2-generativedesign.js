@@ -2,10 +2,10 @@
 import context from "../../script/context.js";
 import * as Utils from "../../script/utils.js";
 import {
-    fillCircle,
+
     randomNumber,
-    randomColor,
-    fillEllipse
+    randomColor
+
 } from "../../script/utils.js";
 
 const backgroundImage = new Image();
@@ -22,16 +22,27 @@ backgroundImage.onload = () => {
     let designContext = designCanvas.getContext("2d");
     document.body.appendChild(designCanvas);
 
-    let artboardLeft = window.innerWidth * 0.3; // positie waar de tekening gaat plaatsvinden
-    let artboardTop = window.innerHeight * 0.3; // positie waar de tekening gaat plaatsvinden
-    let artboardWidth = window.innerWidth * 0.5; // positie waar de tekening gaat plaatsvinden
-    let artboardHeight = window.innerHeight * 0.6; // positie waar de tekening gaat plaatsvinden
+    // positie aangepast
+    let artboardLeft = window.innerWidth * 0.35; // positie waar de tekening gaat plaatsvinden
+    let artboardTop = window.innerHeight * 0.24; // positie waar de tekening gaat plaatsvinden
+    let artboardWidth = window.innerWidth * 0.3; // positie waar de tekening gaat plaatsvinden
+    let artboardHeight = window.innerHeight * 0.5; // positie waar de tekening gaat plaatsvinden
+
 
     designCanvas.style.position = "absolute"; // canvas positie absoluut
     designCanvas.style.top = `${artboardTop}px`; // zet de canvas op de juiste positie boven de artboard
     designCanvas.style.left = `${artboardLeft}px`; // zet de canvas op de juiste positie links ten opzichte van de  artboard
     designCanvas.width = artboardWidth; // breedte van de artboard
     designCanvas.height = artboardHeight; // hoogte van de artboard
+
+
+    // Nieuwe functie om cirkels te tekenen
+    function drawCircle(context, x, y, radius, color) {
+        context.beginPath();
+        context.arc(x, y, radius, 0, Math.PI * 2);
+      
+    }
+
 
 
 
@@ -58,12 +69,27 @@ backgroundImage.onload = () => {
             designContext.fillStyle = randomColor();
             designContext.fillRect(x, y, width, height);
         }
-    
-    
+
+
+        // willekeurige cirkels
+        for (let i = 0; i < 5; i++) {
+            let radius = randomNumber(10, 40);
+            let x = randomNumber(radius, designCanvas.width - radius);
+            let y = randomNumber(radius, designCanvas.height - radius);
+            let color = randomColor();
+            drawCircle(designContext, x, y, radius, color);
+        }
+
+
+
+
+
+
+
     }
 
 
-
+    // wanneer ik op de refresh knop druk , wordt dit getekent
     draw();
     designCanvas.addEventListener("click", draw);
 };
