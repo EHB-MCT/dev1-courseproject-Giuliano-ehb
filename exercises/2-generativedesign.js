@@ -40,6 +40,8 @@ backgroundImage.onload = () => {
     function drawCircle(context, x, y, radius, color) {
         context.beginPath();
         context.arc(x, y, radius, 0, Math.PI * 2);
+        context.fillStyle = color; // fillstyle toegeveoegd
+        context.fill(); // context.fill toegevoeg
       
     }
 
