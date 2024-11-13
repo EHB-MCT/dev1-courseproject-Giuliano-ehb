@@ -95,3 +95,5 @@ backgroundImage.onload = () => {
     draw();
     designCanvas.addEventListener("click", draw);
 };
+
+//oefening af
