@@ -42,7 +42,7 @@ backgroundImage.onload = () => {
         context.arc(x, y, radius, 0, Math.PI * 2);
         context.fillStyle = color; // fillstyle toegeveoegd
         context.fill(); // context.fill toegevoeg
-      
+
     }
 
 

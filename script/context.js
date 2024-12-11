@@ -11,3 +11,6 @@ function setupCanvasContext() {
     canvas.height = window.innerHeight;
     context = canvas.getContext("2d");
 }
+
+
+
