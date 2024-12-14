@@ -89,6 +89,18 @@ class Star {
 }
 }
 
+// Duw de ster weg van de muis en start de valmodus
+repelFromMouse() {
+  const distance = calculateDistance(this.x, this.y, mouse.x, mouse.y);
+  if (distance < 100) {
+    let angle = Math.atan2(this.y - mouse.y, this.x - mouse.x);
+    let force = (100 - distance) * 0.2; // Hoe dichterbij, hoe sterker de duwkracht van de muis tegnv de sterren
+    this.speedX = 0; // Stopt de horizontale snelheid
+    this.speedY = Math.sin(angle) * force; // Beweeg verticaal naar beneden
+    this.isFalling = true; // Zet valmodus aan
+  }
+}
+}
 
 
 
