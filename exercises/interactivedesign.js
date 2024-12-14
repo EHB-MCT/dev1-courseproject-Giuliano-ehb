@@ -117,6 +117,19 @@ function createStars() {
   }
 }
 
+// Animatie
+function animate() {
+  context.clearRect(0, 0, canvasWidth, canvasHeight);
+
+  stars.forEach((star) => {
+    star.draw();
+    star.update();
+  });
+
+  requestAnimationFrame(animate);
+}
+
+
 
 
 
