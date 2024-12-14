@@ -130,6 +130,21 @@ function animate() {
 }
 
 
+// Muisinteractie
+context.canvas.addEventListener("mousemove", (event) => {
+  const rect = context.canvas.getBoundingClientRect();
+  mouse.x = event.clientX - rect.left;
+  mouse.y = event.clientY - rect.top;
+
+  stars.forEach((star) => {
+    star.repelFromMouse();
+  });
+});
+
+// Initialisatie
+createStars();
+animate();
+
 
 
 
