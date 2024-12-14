@@ -104,6 +104,20 @@ repelFromMouse() {
 
 
 
+// Sterren genereren
+function createStars() {
+  for (let i = 0; i < starCount; i++) {
+    const x = randomNumber(0, canvasWidth);
+    const y = randomNumber(0, canvasHeight);
+    const radius = randomGaussian() * 2 + 6;
+    const hue = randomNumber(0, 360);
+    const speedX = randomGaussian() * 0.5;
+    const speedY = randomGaussian() * 0.5;
+    stars.push(new Star(x, y, radius, hue, speedX, speedY));
+  }
+}
+
+
 
 
 
