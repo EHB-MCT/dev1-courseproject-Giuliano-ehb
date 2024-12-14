@@ -66,9 +66,28 @@ class Star {
         this.speedY = randomGaussian() * 0.5 + 1; // Reset snelheid
         this.isFalling = false; // Stop valmodus na reset
       }
-    }
+
+
+} else {
+  // Normale valbeweging
+  this.x += this.speedX;
+  this.y += this.speedY;
+
+  // Laat de ster langzaam vallen zoals sneeuw
+  this.y += 0.5; 
+
+  // Controleer randen en houd de ster binnen de canvas
+  if (this.x - this.radius < 0 || this.x + this.radius > canvasWidth) {
+    this.speedX *= -1; 
   }
 
+  // Reset als de ster onderaan valt
+  if (this.y - this.radius > canvasHeight) {
+    this.y = -this.radius;
+    this.x = randomNumber(0, canvasWidth);
+  }
+}
+}
 
 
 
