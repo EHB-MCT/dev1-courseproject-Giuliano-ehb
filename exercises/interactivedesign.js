@@ -127,6 +127,16 @@ function animate() {
   });
 
   requestAnimationFrame(animate);
+  drawName();
+}
+
+
+
+// Signature tekenen
+function drawName() {
+  context.font = "16px Arial";
+  context.fillStyle = hsl(0, 0, 90);
+  context.fillText("Giuliano Schaerlaecken", canvasWidth - 190, canvasHeight - 20);
 }
 
 
@@ -147,13 +157,3 @@ animate();
 
 
 
-
-
-
-
-// Signature tekenen
-function drawName() {
-  context.font = "16px Arial";
-  context.fillStyle = hsl(0, 0, 90);
-  context.fillText("Giuliano Schaerlaecken", canvasWidth - 190, canvasHeight - 20);
-}
