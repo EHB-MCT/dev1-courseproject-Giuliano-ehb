@@ -8,7 +8,8 @@ import {
   randomNumber,
   randomGaussian,
   hsl,
-  calculateDistance
+  calculateDistance,
+  spaceInvader
 } from "../../script/utils.js";
 
 
@@ -27,7 +28,7 @@ let mouse = {
   y: canvasHeight / 2
 };
 
-// Ster 
+// Ster
 class Star {
   constructor(x, y, radius, hue, speedX, speedY) {
     this.x = x;
@@ -38,8 +39,8 @@ class Star {
     this.speedY = speedY;
     this.isFalling = false; // Startwaarde: niet in valmodus
   }
-
-
+  
+  
   // Ster tekenen
   draw() {
     context.fillStyle = hsl(this.hue, 70, 60);
@@ -47,13 +48,14 @@ class Star {
     context.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
     context.fill();
   }
-
   
-    // Deze stuk code is deels gemaakt met ChatGPT (OpenAI) on 12/11/2024
-    // Maar redelijk veel aanpassingen gemaakt
-
+  
+  // Deze stuk code is deels gemaakt met ChatGPT (OpenAI) on 12/11/2024
+  // Maar redelijk veel aanpassingen gemaakt
+  
+  
   // Ster updaten
-  update() {
+ update() {
     // Als ster in valmodus is, toepassen van zwaartekracht
     if (this.isFalling) {
       this.speedY += 0.5; // Simuleert zwaartekracht
@@ -67,7 +69,7 @@ class Star {
         this.isFalling = false; // Stop valmodus na reset
       }
 
-
+      
 } else {
   // Normale valbeweging
   this.x += this.speedX;
@@ -128,17 +130,30 @@ function animate() {
 
   requestAnimationFrame(animate);
   drawName();
+  drawSpaceInvader();
 }
 
 
 
 // Signature tekenen
 function drawName() {
-  context.font = "16px Arial";
-  context.fillStyle = hsl(0, 0, 90);
-  context.fillText("Giuliano Schaerlaecken", canvasWidth - 190, canvasHeight - 20);
+  context.font = "16px Arial"; 
+  context.fillStyle = hsl(0, 0, 90); 
+  context.fillText("Giuliano Schaerlaecken", canvasWidth - 190, canvasHeight - 20); 
 }
 
+// Functie om de Space Invader te tekenen in de rechteronderhoek
+function drawSpaceInvader() {
+  const invaderSize = 10; 
+  const invaderWidth = invaderSize * 8; 
+  const invaderHeight = invaderSize * 8; 
+  const margin = 20; 
+
+
+  const startX = canvasWidth - invaderWidth - margin; 
+  const startY = canvasHeight - invaderHeight - margin - 30; 
+  spaceInvader(context, startX, startY, invaderSize);
+}
 
 // Muisinteractie
 context.canvas.addEventListener("mousemove", (event) => {
