@@ -166,246 +166,151 @@ export function randomColor() {
 
 
 
-
-
-export function spaceInvader() {
-
-background();
-box1();
-box2();
-box3();
-box4();
-box5();
-box6();
-box7();
-box8();
-box9();
-box10();
-box11();
-box12();
-box13();
-box14();
-box15();
-box16();
-box17();
-
-
-function background() {
-
-
-    context.beginPath();
-    context.rect(100, 100, 300, 300);
-    context.fillStyle = "black";
-    context.fill();
-
-}
-
-
-
-
-
-
-
-function box1() {
-
-
-    context.beginPath();
-    context.rect(125, 125, 50, 50);
-    context.fillStyle = "green";
-    context.fill();
-
-
-}
-
-
-function box2() {
-
-
-    context.beginPath();
-    context.rect(175, 125, 50, 50);
-    context.fillStyle = "green";
-    context.fill();
-
-
-}
-
-function box3() {
-
-
-    context.beginPath();
-    context.rect(225, 125, 50, 50);
-    context.fillStyle = "green";
-    context.fill();
-
-
-}
-
-function box4() {
-
-
-    context.beginPath();
-    context.rect(275, 125, 50, 50);
-    context.fillStyle = "green";
-    context.fill();
-
-
-}
-
-
-function box5() {
-
-
-    context.beginPath();
-    context.rect(325, 125, 50, 50);
-    context.fillStyle = "green";
-    context.fill();
-
-
-}
-
-
-function box6() {
-
-
-    context.beginPath();
-    context.rect(125, 175, 50, 50);
-    context.fillStyle = "green";
-    context.fill();
-
-
-}
-
-
-function box7() {
-
-
-    context.beginPath();
-    context.rect(175, 175, 50, 50);
-    context.fillStyle = "green";
-    context.fill();
-
-
-}
-
-function box8() {
-
-
-    context.beginPath();
-    context.rect(225, 175, 50, 50);
-    context.fillStyle = "green";
-    context.fill();
-
-
-}
-
-function box9() {
-
-
-    context.beginPath();
-    context.rect(275, 175, 50, 50);
-    context.fillStyle = "green";
-    context.fill();
-
-
-}
-
-
-function box10() {
-
-
-    context.beginPath();
-    context.rect(325, 175, 50, 50);
-    context.fillStyle = "green";
-    context.fill();
-
-
-}
-
-
-
-
-function box11() {
-
-
-    context.beginPath();
-    context.rect(125, 225, 50, 50);
-    context.fillStyle = "green";
-    context.fill();
-
-
-}
-
-
-
-
-function box12() {
-
-
-    context.beginPath();
-    context.rect(325, 225, 50, 50);
-    context.fillStyle = "green";
-    context.fill();
-
-
-}
-
-
-function box13() {
-
-
-    context.beginPath();
-    context.rect(175, 275, 50, 50);
-    context.fillStyle = "green";
-    context.fill();
-
-
-}
-
-
-function box14() {
-
-
-    context.beginPath();
-    context.rect(275, 275, 50, 50);
-    context.fillStyle = "green";
-    context.fill();
-
-
-}
-
-
-function box15() {
-
-
-    context.beginPath();
-    context.rect(125, 325, 50, 50);
-    context.fillStyle = "green";
-    context.fill();
-
-
-}
-
-function box16() {
-
-
-    context.beginPath();
-    context.rect(225, 325, 50, 50);
-    context.fillStyle = "green";
-    context.fill();
-
-
-}
-
-
-function box17() {
-
-
-    context.beginPath();
-    context.rect(325, 325, 50, 50);
-    context.fillStyle = "green";
-    context.fill();
-
-
-}
-
+export function spaceInvader(context, startX, startY, invaderSize) {
+    
+    background(startX, startY, invaderSize);
+    box1(startX, startY, invaderSize);
+    box2(startX, startY, invaderSize);
+    box3(startX, startY, invaderSize);
+    box4(startX, startY, invaderSize);
+    box5(startX, startY, invaderSize);
+    box6(startX, startY, invaderSize);
+    box7(startX, startY, invaderSize);
+    box8(startX, startY, invaderSize);
+    box9(startX, startY, invaderSize);
+    box10(startX, startY, invaderSize);
+    box11(startX, startY, invaderSize);
+    box12(startX, startY, invaderSize);
+    box13(startX, startY, invaderSize);
+    box14(startX, startY, invaderSize);
+    box15(startX, startY, invaderSize);
+    box16(startX, startY, invaderSize);
+    box17(startX, startY, invaderSize);
+
+    function background(x, y, size) {
+        const padding = size * 0.5;
+        context.beginPath();
+        context.rect(x - padding, y - padding, size * 5.6 + padding * 1, size * 5.6 + padding * 1);
+        context.fillStyle = "black";
+        context.fill();
+    }
+
+    function box1(x, y, size) {
+        context.beginPath();
+        context.rect(x + size * 0, y + size * 0, size, size);
+        context.fillStyle = "green";
+        context.fill();
+    }
+
+    function box2(x, y, size) {
+        context.beginPath();
+        context.rect(x + size * 1, y + size * 0, size, size);
+        context.fillStyle = "green";
+        context.fill();
+    }
+
+    function box3(x, y, size) {
+        context.beginPath();
+        context.rect(x + size * 2, y + size * 0, size, size);
+        context.fillStyle = "green";
+        context.fill();
+    }
+
+    function box4(x, y, size) {
+        context.beginPath();
+        context.rect(x + size * 3, y + size * 0, size, size);
+        context.fillStyle = "green";
+        context.fill();
+    }
+
+    function box5(x, y, size) {
+        context.beginPath();
+        context.rect(x + size * 4, y + size * 0, size, size);
+        context.fillStyle = "green";
+        context.fill();
+    }
+
+    function box6(x, y, size) {
+        context.beginPath();
+        context.rect(x + size * 0, y + size * 1, size, size);
+        context.fillStyle = "green";
+        context.fill();
+    }
+
+    function box7(x, y, size) {
+        context.beginPath();
+        context.rect(x + size * 1, y + size * 1, size, size);
+        context.fillStyle = "green";
+        context.fill();
+    }
+
+    function box8(x, y, size) {
+        context.beginPath();
+        context.rect(x + size * 2, y + size * 1, size, size);
+        context.fillStyle = "green";
+        context.fill();
+    }
+
+    function box9(x, y, size) {
+        context.beginPath();
+        context.rect(x + size * 3, y + size * 1, size, size);
+        context.fillStyle = "green";
+        context.fill();
+    }
+
+    function box10(x, y, size) {
+        context.beginPath();
+        context.rect(x + size * 4, y + size * 1, size, size);
+        context.fillStyle = "green";
+        context.fill();
+    }
+
+    function box11(x, y, size) {
+        context.beginPath();
+        context.rect(x + size * 0, y + size * 2, size, size);
+        context.fillStyle = "green";
+        context.fill();
+    }
+
+    function box12(x, y, size) {
+        context.beginPath();
+        context.rect(x + size * 4, y + size * 2, size, size);
+        context.fillStyle = "green";
+        context.fill();
+    }
+
+    function box13(x, y, size) {
+        context.beginPath();
+        context.rect(x + size * 1, y + size * 3, size, size);
+        context.fillStyle = "green";
+        context.fill();
+    }
+
+    function box14(x, y, size) {
+        context.beginPath();
+        context.rect(x + size * 3, y + size * 3, size, size);
+        context.fillStyle = "green";
+        context.fill();
+    }
+
+    function box15(x, y, size) {
+        context.beginPath();
+        context.rect(x + size * 0, y + size * 4, size, size);
+        context.fillStyle = "green";
+        context.fill();
+    }
+
+    function box16(x, y, size) {
+        context.beginPath();
+        context.rect(x + size * 2, y + size * 4, size, size);
+        context.fillStyle = "green";
+        context.fill();
+    }
+
+    function box17(x, y, size) {
+        context.beginPath();
+        context.rect(x + size * 4, y + size * 4, size, size);
+        context.fillStyle = "green";
+        context.fill();
+    }
 }
